@@ -20,86 +20,90 @@ const windowsHeight = Dimensions.get('window').height;
 /*
   * gridtype value between 1 to 6
  */
-var GridArray = [
-  {
-    gridtype: 4
-  },{
-    gridlist: [
-        {
-          imageurl: require('./Assets/img.jpg'),
-          imagetext: 'img'
-         },{
-           imageurl: require('./Assets/img.jpg'),
-           imagetext: 'img'
-         },{
-           imageurl: require('./Assets/img.jpg'),
-           imagetext: 'img'
-         },{
-           imageurl: require('./Assets/img.jpg'),
-           imagetext: 'img'
-         },
-         {
-           imageurl: require('./Assets/img.jpg'),
-           imagetext: 'img'
-         },{
-           imageurl: require('./Assets/img.jpg'),
-           imagetext: 'img'
-         },{
-           imageurl: require('./Assets/img.jpg'),
-           imagetext: 'img'
-         },{
-           imageurl: require('./Assets/img.jpg'),
-           imagetext: 'img'
-         },{
-           imageurl: require('./Assets/img.jpg'),
-           imagetext: 'img'
-         },{
-           imageurl: require('./Assets/img.jpg'),
-           imagetext: 'img'
-         },{
-           imageurl: require('./Assets/img.jpg'),
-           imagetext: 'img'
-         },{
-           imageurl: require('./Assets/img.jpg'),
-           imagetext: 'img'
-         },{
-           imageurl: require('./Assets/img.jpg'),
-           imagetext: 'img'
-         },{
-           imageurl: require('./Assets/img.jpg'),
-           imagetext: 'img'
-         },{
-           imageurl: require('./Assets/img.jpg'),
-           imagetext: 'img'
-         },{
-           imageurl: require('./Assets/img.jpg'),
-           imagetext: 'img'
-          }
-        ]
-    }
-  ];
-const gridType = GridArray[0].gridtype;
-const gridlist = GridArray[1].gridlist;
-const itemwidth = (windowsWidth-40)/gridType;
-const itemheight = (windowsWidth-40)/gridType;
-const basicspace = 10;
-function spacecalculate(){
-  var calulatespace;
-  if(gridType == 1)
-    calulatespace = basicspace*2;
-  else if(gridType == 2)
-    calulatespace = basicspace+2;
-  else if(gridType == 3)
-    calulatespace = basicspace;
-  else if(gridType == 4)
-    calulatespace = basicspace-2;
-  else if(gridType == 5)
-    calulatespace = basicspace-4;
-  else
-    calulatespace = basicspace-4.5;
-  return calulatespace;
+ var GridArray = this.props;
+//  var GridArray = [
+//   {
+//     gridtype: 4
+//   },{
+//     gridlist: [
+//         {
+//           imageurl: require('./Assets/img.jpg'),
+//           imagetext: 'img'
+//          },{
+//            imageurl: require('./Assets/img.jpg'),
+//            imagetext: 'img'
+//          },{
+//            imageurl: require('./Assets/img.jpg'),
+//            imagetext: 'img'
+//          },{
+//            imageurl: require('./Assets/img.jpg'),
+//            imagetext: 'img'
+//          },
+//          {
+//            imageurl: require('./Assets/img.jpg'),
+//            imagetext: 'img'
+//          },{
+//            imageurl: require('./Assets/img.jpg'),
+//            imagetext: 'img'
+//          },{
+//            imageurl: require('./Assets/img.jpg'),
+//            imagetext: 'img'
+//          },{
+//            imageurl: require('./Assets/img.jpg'),
+//            imagetext: 'img'
+//          },{
+//            imageurl: require('./Assets/img.jpg'),
+//            imagetext: 'img'
+//          },{
+//            imageurl: require('./Assets/img.jpg'),
+//            imagetext: 'img'
+//          },{
+//            imageurl: require('./Assets/img.jpg'),
+//            imagetext: 'img'
+//          },{
+//            imageurl: require('./Assets/img.jpg'),
+//            imagetext: 'img'
+//          },{
+//            imageurl: require('./Assets/img.jpg'),
+//            imagetext: 'img'
+//          },{
+//            imageurl: require('./Assets/img.jpg'),
+//            imagetext: 'img'
+//          },{
+//            imageurl: require('./Assets/img.jpg'),
+//            imagetext: 'img'
+//          },{
+//            imageurl: require('./Assets/img.jpg'),
+//            imagetext: 'img'
+//           }
+//         ]
+//     }
+// ];
+if(GridArray){
+  const gridType = GridArray[0].gridtype;
+  const gridlist = GridArray[1].gridlist;
+  const itemwidth = (windowsWidth-40)/gridType;
+  const itemheight = (windowsWidth-40)/gridType;
+  const basicspace = 10;
+  function spacecalculate(){
+    var calulatespace;
+    if(gridType == 1)
+      calulatespace = basicspace*2;
+    else if(gridType == 2)
+      calulatespace = basicspace+2;
+    else if(gridType == 3)
+      calulatespace = basicspace;
+    else if(gridType == 4)
+      calulatespace = basicspace-2;
+    else if(gridType == 5)
+      calulatespace = basicspace-4;
+    else
+      calulatespace = basicspace-4.5;
+    return calulatespace;
+  }
+  const space =  spacecalculate();
 }
-const space =  spacecalculate();
+
 
 export default class gradient extends Component {
 
